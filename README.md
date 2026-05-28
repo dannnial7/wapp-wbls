@@ -1,2 +1,2 @@
 # wapp-wbls
-We-based learning system
+Web-based learning system
