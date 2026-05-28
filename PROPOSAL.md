@@ -136,8 +136,9 @@ The following WBS outlines the key phases, tasks, and deliverables for the Web A
 | 2.1 | Audience Classification | User Roles Table & Use Case Diagrams |
 | 2.2 | Audience Characterization | Informational, Functional & Usability Tables |
 | **3.0** | **Design Phase** | |
-| 3.1 | Navigational & Structural Design | Site Map & Navigation Paths |
-| 3.2 | UI/UX Wireframing | Low/High-Fidelity Prototypes |
+| 3.1 | Site Structure Design |
+| 3.2 | Presentation Design (UI/UX) |
+| 3.3 | Logical Data Design (ERD) |
 | **4.0** | **Development Phase** | |
 | 4.1 | Front-end Development | HTML/CSS/JS Implementation |
 | 4.2 | Back-end & Database Setup | Server Logic & Database Schema |
