@@ -22,9 +22,13 @@ This section outlines the core direction of the web application based on the WSD
 
 ### 4.1 Audience Classification
 
-* **Identify User Roles:** * **Role 1: Admin** - Manages the overall platform, content, and user accounts.
-    * **Role 2: Learners** - Registered users who actively engage with and track educational materials.
-    * **Role 3: Visitors/Guests** - Unregistered or temporary users exploring the platform.
+**Identified User Roles**
+
+| User Role | Description |
+| :--- | :--- |
+| **Admin** | Manages the overall platform, content, system configurations, and user accounts. |
+| **Learners** | Registered users who actively engage with, track, and complete educational materials. |
+| **Visitors/Guests** | Unregistered or temporary users exploring the platform and its public offerings. |
 
 > 💡 **Core System Requirement (CRUD):**
 > All identified user roles above must be able to fully perform **CRUD** operations within their authorized scope. 
@@ -33,18 +37,22 @@ This section outlines the core direction of the web application based on the WSD
 > * **U**pdate (Modify existing data)
 > * **D**elete (Remove existing data)
 
-* **Individual Use-Case Diagrams:**
-    * ![Use Case - Admin](link-to-image) *(Replace with actual Admin use-case diagram)*
-    * ![Use Case - Learners](link-to-image) *(Replace with actual Learners use-case diagram)*
-    * ![Use Case - Visitors/Guests](link-to-image) *(Replace with actual Visitors/Guests use-case diagram)*
-    
-    *(Note: Ensure there is exactly one individual use-case diagram for each identified role).*
+**Individual Use-Case Diagrams:**
+* ![Use Case - Admin](link-to-image) *(Replace with actual Admin use-case diagram)*
+* ![Use Case - Learners](link-to-image) *(Replace with actual Learners use-case diagram)*
+* ![Use Case - Visitors/Guests](link-to-image) *(Replace with actual Visitors/Guests use-case diagram)*
 
 ### 4.2 Audience Characterization
 
 #### 👤 Role 1: Admin
 
-**Table 1: Functional Requirements**
+**Table 1: Informational Requirements**
+| Req ID | Requirement Description | Data Source |
+| :--- | :--- | :--- |
+| IR-1.1 | The system must provide the admin with a summary of total active learners. | User Database |
+| IR-1.2 | The system must display aggregated system logs and error reports. | System Logs |
+
+**Table 2: Functional Requirements**
 | Req ID | Requirement Description | Priority |
 | :--- | :--- | :--- |
 | FR-1.1 | **[Create]** Admin must be able to create new user accounts and course categories. | High |
@@ -52,23 +60,23 @@ This section outlines the core direction of the web application based on the WSD
 | FR-1.3 | **[Update]** Admin must be able to edit existing system configurations and content. | High |
 | FR-1.4 | **[Delete]** Admin must be able to remove obsolete content or ban user accounts. | High |
 
-**Table 2: Usability Requirements**
+**Table 3: Usability Requirements**
 | Req ID | Requirement Description | Metric / Goal |
 | :--- | :--- | :--- |
 | UR-1.1 | The admin dashboard should load completely within 2 seconds. | Performance |
 | UR-1.2 | Data tables must support quick sorting and filtering. | Efficiency |
 
-**Table 3: Navigational Requirements**
-| Req ID | Requirement Description | Target Path / View |
-| :--- | :--- | :--- |
-| NR-1.1 | Admin can access the user management interface from the sidebar. | `/admin/users` |
-| NR-1.2 | Admin can navigate to system settings from the profile dropdown. | `/admin/settings` |
-
 ---
 
 #### 👤 Role 2: Learners
 
-**Table 1: Functional Requirements**
+**Table 1: Informational Requirements**
+| Req ID | Requirement Description | Data Source |
+| :--- | :--- | :--- |
+| IR-2.1 | The system must display the learner's current GPA and module progress. | Gradebook |
+| IR-2.2 | The system must show upcoming assignment deadlines and announcements. | Course Schedule |
+
+**Table 2: Functional Requirements**
 | Req ID | Requirement Description | Priority |
 | :--- | :--- | :--- |
 | FR-2.1 | **[Create]** Learners must be able to create personal notes and submit assignments. | High |
@@ -76,23 +84,23 @@ This section outlines the core direction of the web application based on the WSD
 | FR-2.3 | **[Update]** Learners must be able to update their user profile and edit draft submissions. | Medium |
 | FR-2.4 | **[Delete]** Learners must be able to delete their uploaded files or personal comments. | Medium |
 
-**Table 2: Usability Requirements**
+**Table 3: Usability Requirements**
 | Req ID | Requirement Description | Metric / Goal |
 | :--- | :--- | :--- |
 | UR-2.1 | The learning interface must be fully responsive on mobile devices. | Accessibility |
 | UR-2.2 | The system should provide clear error messages for failed submissions. | Error Prevention |
 
-**Table 3: Navigational Requirements**
-| Req ID | Requirement Description | Target Path / View |
-| :--- | :--- | :--- |
-| NR-2.1 | Learners can access active courses directly from the main dashboard. | `/learner/dashboard` |
-| NR-2.2 | Learners can easily navigate back to previous modules using breadcrumbs. | Multi-level UI |
-
 ---
 
 #### 👤 Role 3: Visitors/Guests
 
-**Table 1: Functional Requirements**
+**Table 1: Informational Requirements**
+| Req ID | Requirement Description | Data Source |
+| :--- | :--- | :--- |
+| IR-3.1 | The system must provide general information about platform features and pricing. | CMS |
+| IR-3.2 | The system must display contact information and frequently asked questions. | Static Content |
+
+**Table 2: Functional Requirements**
 | Req ID | Requirement Description | Priority |
 | :--- | :--- | :--- |
 | FR-3.1 | **[Create]** Guests must be able to create a temporary session or guest inquiry ticket. | Medium |
@@ -100,26 +108,42 @@ This section outlines the core direction of the web application based on the WSD
 | FR-3.3 | **[Update]** Guests must be able to update their temporary inquiry details before submission. | Low |
 | FR-3.4 | **[Delete]** Guests must be able to clear their guest session data or withdraw an inquiry. | Low |
 
-**Table 2: Usability Requirements**
+**Table 3: Usability Requirements**
 | Req ID | Requirement Description | Metric / Goal |
 | :--- | :--- | :--- |
 | UR-3.1 | The homepage must be visually engaging and clearly state the platform's purpose. | User Engagement |
 | UR-3.2 | Registration links must be highly visible to encourage sign-ups. | Conversion |
 
-**Table 3: Navigational Requirements**
-| Req ID | Requirement Description | Target Path / View |
-| :--- | :--- | :--- |
-| NR-3.1 | Guests can navigate to the registration page from the top navigation bar. | `/register` |
-| NR-3.2 | Guests can access the public catalog from the main landing page. | `/catalog` |
-
 ---
 
 ## 5. Project Scope
-> *[Define the boundaries of your project. Clearly state what features and functionalities will be implemented for the Week 7 submission, and explicitly mention any features that are excluded from the current phase.]*
+> *[Define the boundaries of your project. Clearly state what features and functionalities will be implemented for the Week 7 submission.]*
+
+### 5.1 Outside Scope (Optional)
+> *[Explicitly mention any features, platforms, or integrations that are excluded from the current phase (e.g., mobile app native development, live third-party payment gateway integration, advanced AI chatbots, etc.).]*
 
 ---
 
+## 6. Work Breakdown Structure (WBS)
+The following WBS outlines the key phases, tasks, and deliverables for the Web Application project.
 
-**Muhammad Danial Fitri bin Mohd Khairizal** *Student ID: TP077362* *Asia Pacific University (APU)*
-Web_App_Proposal_README-v2.md
-Displaying Web_App_Proposal_README-v2.md.
+| WBS Code | Phase / Task | Deliverable / Output |
+| :--- | :--- | :--- |
+| **1.0** | **Project Initiation** | |
+| 1.1 | Finalize Website Title & Objectives | Approved Scope Definition |
+| 1.2 | Define Mission Statement | Target Audience, Purpose, Subject |
+| **2.0** | **Requirement Analysis (WSDM)** | |
+| 2.1 | Audience Classification | User Roles Table & Use Case Diagrams |
+| 2.2 | Audience Characterization | Informational, Functional & Usability Tables |
+| **3.0** | **Design Phase** | |
+| 3.1 | Navigational & Structural Design | Site Map & Navigation Paths |
+| 3.2 | UI/UX Wireframing | Low/High-Fidelity Prototypes |
+| **4.0** | **Development Phase** | |
+| 4.1 | Front-end Development | HTML/CSS/JS Implementation |
+| 4.2 | Back-end & Database Setup | Server Logic & Database Schema |
+| 4.3 | CRUD Implementation | Create, Read, Update, Delete for all roles |
+| **5.0** | **Testing & Deployment** | |
+| 5.1 | Usability & Functional Testing | Bug Reports and Fixes |
+| 5.2 | Final Submission (Week 7) | Deployed App & Proposal Report |
+
+---
