@@ -21,7 +21,8 @@ This section outlines the core direction of the web application based on the WSD
 ## 4. Audience Modelling
 
 ### 4.1 Audience Classification
-* **Identify User Roles:** * *Role 1: [e.g., Guest / Unregistered User]*
+* **Identify User Roles:**  
+    *  *Role 1: [e.g., Guest / Unregistered User]*
     * *Role 2: [e.g., Registered Member]*
     * *Role 3: [e.g., System Administrator]*
 * **Individual Use-Case Diagrams:**
