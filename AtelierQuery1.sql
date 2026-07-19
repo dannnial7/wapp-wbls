@@ -1,3 +1,11 @@
+USE master
+GO
+ALTER DATABASE AtelierDatabase SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+GO
+DROP DATABASE AtelierDatabase
+GO
+CREATE DATABASE AtelierDatabase
+GO
 USE AtelierDatabase
 GO
 
@@ -242,7 +250,8 @@ IsRead BIT DEFAULT 0,
 CreatedAt DATETIME DEFAULT GETDATE(),
 LinkURL VARCHAR(500) --link to go to notif section
 
-) GO
+)
+GO
 
 --Badges (Acts as a learner's achievement)
 
