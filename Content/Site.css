@@ -1,4 +1,4 @@
-﻿/*Loaded fonts from google fonts*/
+/*Loaded fonts from google fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family:wght@400;500&display=swap');
 
 :root {
@@ -692,5 +692,34 @@ tr:hover td {
     cursor: pointer;
     display: inline-block;
     padding: 6px 0;
+}
+
+/* Auth page layout — used by Login, Register, ForgotPassword, ResetPassword */
+
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+    min-height: calc(100vh - 200px);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    padding: var(--space-xl);
+}
+
+/* Section title spacing */
+
+.section-title {
+    margin-bottom: var(--space-md);
+}
+
+/* Welcome message in navbar */
+
+#Welcome-msg {
+    color: var(--accent-colour);
+    font-size: 14px;
 }
 
