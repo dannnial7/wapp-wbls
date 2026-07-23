@@ -52,7 +52,7 @@
                             <p class="course-price">
                                 RM <%# Eval("Price", "{0:F2}") %>
                             </p>
-                            <a href='<%# "~/CourseDetail.aspx?id=" + Eval("CourseID") %>'
+                            <a href='<%# "CourseDetail.aspx?id=" + Eval("CourseID") %>'
                                class="btn btn-primary btn-sm"
                                style="margin-top:8px;
                                       display:block;

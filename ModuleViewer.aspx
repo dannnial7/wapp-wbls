@@ -1,0 +1,99 @@
+﻿<%@ Page Title="Module" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ModuleViewer.aspx.cs" Inherits="Atelier.ModuleViewer" %>
+
+<asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server"></asp:Content>
+<asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
+
+    <div class="container" style="margin-top:40px">
+
+        <asp:Panel ID="pnlNotFound" runat="server" Visible="false">
+            <div class="alert alert-danger">Module not found.</div>
+        </asp:Panel>
+
+        <asp:Panel ID="pnlModule" runat="server">
+
+            <p class="course-meta">
+                <asp:HyperLink ID="lnkBackToCourse" runat="server" Text="&larr; Back to course" />
+            </p>
+
+            <h1><asp:Literal ID="litTitle" runat="server" /></h1>
+            <p class="course-meta">
+                <asp:Literal ID="litDuration" runat="server" /> mins
+                &nbsp;·&nbsp;
+                <asp:Literal ID="litType" runat="server" />
+            </p>
+
+            <div style="margin:24px 0">
+                <asp:Literal ID="litDescription" runat="server" />
+            </div>
+
+            <asp:Panel ID="pnlVideo" runat="server" Visible="false" 
+                       style="margin:24px 0;text-align:center">
+                <asp:Literal ID="litVideo" runat="server" />
+            </asp:Panel>
+
+            <asp:Panel ID="pnlPdf" runat="server" Visible="false" CssClass="card">
+                <h4>Course Material</h4>
+                <p class="course-meta">This module is delivered as a PDF document.</p>
+                <asp:HyperLink ID="lnkPdf" runat="server"
+                    CssClass="btn btn-primary btn-sm"
+                    Target="_blank"
+                    Text="Open PDF"
+                    style="color:#BFCFE8 !important;background-color:#6B1A2A !important;" />
+            </asp:Panel>
+
+            <div class="card" style="margin-top:24px">
+                <asp:Panel ID="pnlCompleted" runat="server" Visible="false">
+                    <span class="badge badge-success">Completed</span>
+                    <p class="course-meta" style="margin-top:8px">
+                        You finished this module on
+                        <asp:Literal ID="litCompletedAt" runat="server" />.
+                    </p>
+                </asp:Panel>
+
+                <asp:Panel ID="pnlNotCompleted" runat="server">
+                    <p>Finished with this module?</p>
+                    <asp:Button ID="btnComplete" runat="server"
+                        Text="Mark as Complete"
+                        CssClass="btn btn-primary"
+                        OnClick="btnComplete_Click" />
+                </asp:Panel>
+            </div>
+
+            <div class="card" style="margin-top:24px">
+                <h4>My Notes</h4>
+                <p class="course-meta">Only you can see these.</p>
+
+                <asp:Panel ID="pnlNoteSaved" runat="server" Visible="false">
+                    <div class="alert alert-success">Notes saved.</div>
+                </asp:Panel>
+
+                <div class="form-group">
+                    <asp:TextBox ID="txtNotes" runat="server"
+                        TextMode="MultiLine"
+                        Rows="6"
+                        placeholder="Write your notes here..." />
+                </div>
+
+                <asp:RequiredFieldValidator ID="rfvNotes" runat="server"
+                    ControlToValidate="txtNotes"
+                    ErrorMessage="Please write something before saving."
+                    ValidationGroup="Notes"
+                    CssClass="alert alert-danger"
+                    Display="Dynamic" />
+
+                <asp:Button ID="btnSaveNotes" runat="server"
+                    Text="Save Notes"
+                    CssClass="btn btn-secondary"
+                    ValidationGroup="Notes"
+                    OnClick="btnSaveNotes_Click" />
+
+                <p class="course-meta" style="margin-top:8px">
+                    <asp:Literal ID="litNoteUpdated" runat="server" />
+                </p>
+            </div>
+
+        </asp:Panel>
+
+    </div>
+
+</asp:Content>

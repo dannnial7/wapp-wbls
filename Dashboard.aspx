@@ -52,7 +52,7 @@
                             </div>
                             <p class="course-meta"><%# Eval("Progress") %>% complete</p>
 
-                            <a href='<%# "~/CourseDetail.aspx?id=" + Eval("CourseID") %>'
+                            <a href='<%# "CourseDetail.aspx?id=" + Eval("CourseID") %>'
                                class="btn btn-primary btn-sm"
                                style="margin-top:8px;display:block;text-align:center;color:#BFCFE8 !important;background-color:#6B1A2A !important;">
                                 Continue Learning
