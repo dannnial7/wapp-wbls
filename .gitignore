@@ -3,7 +3,6 @@ bin/
 obj/
 *.user
 *.suo
-packages/
 bin/Atelier.dll.config
 bin/Atelier.dll.config
 bin/Atelier.dll.config
@@ -17,3 +16,4 @@ obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 .vs/Atelier/v18/.suo
 .vs/Atelier/v18/DocumentLayout.backup.json
 .vs/Atelier/v18/DocumentLayout.json
+s
